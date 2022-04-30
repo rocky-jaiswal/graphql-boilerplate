@@ -5,6 +5,7 @@ import {
   ResolveUserFn
   // ValidateUserFn
 } from '@envelop/generic-auth'
+import { useDepthLimit } from '@envelop/depth-limit'
 
 import { schema } from './schema'
 
@@ -25,6 +26,9 @@ async function main() {
       useGenericAuth({
         resolveUserFn,
         mode: 'protect-all'
+      }),
+      useDepthLimit({
+        maxDepth: 5
       })
     ],
     context: () => {
