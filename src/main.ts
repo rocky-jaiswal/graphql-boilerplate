@@ -1,3 +1,4 @@
+import pino from 'pino'
 import { createServer } from '@graphql-yoga/node'
 import {
   useGenericAuth,
@@ -11,6 +12,8 @@ type UserType = {
   id: string
 }
 
+const logger = pino()
+
 const resolveUserFn: ResolveUserFn<UserType> = async (_context) => {
   return { id: '101' }
 }
@@ -23,7 +26,10 @@ async function main() {
         resolveUserFn,
         mode: 'protect-all'
       })
-    ]
+    ],
+    context: () => {
+      return { logger }
+    }
   })
   await server.start()
 }

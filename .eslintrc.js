@@ -11,6 +11,13 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always'
+      }
+    ]
   }
 }
