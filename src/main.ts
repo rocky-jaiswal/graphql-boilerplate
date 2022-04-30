@@ -1,5 +1,8 @@
-import pino from 'pino'
+import pino, { Logger } from 'pino'
+import type { IncomingMessage, ServerResponse } from 'http'
+
 import { createServer } from '@graphql-yoga/node'
+
 import {
   useGenericAuth,
   ResolveUserFn
@@ -9,12 +12,19 @@ import { useDepthLimit } from '@envelop/depth-limit'
 
 import { schema } from './schema'
 
-type UserType = {
+export type UserType = {
   id: string
+}
+
+export type GraphQLContext = {
+  request: IncomingMessage
+  res: ServerResponse
+  logger: Logger
 }
 
 const logger = pino()
 
+// TODO: Extract and validation authorisation header, context type
 const resolveUserFn: ResolveUserFn<UserType> = async (_context) => {
   return { id: '101' }
 }
