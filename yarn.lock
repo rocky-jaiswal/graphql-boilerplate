@@ -484,10 +484,31 @@
   dependencies:
     "@envelop/types" "2.2.0"
 
+"@envelop/core@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.3.1.tgz#77d502db2aa97846573d7c2e87a00bde840c7ebb"
+  integrity sha512-AnYUci7EGyA8flml881lDvVDl6n/u6GQpVIOTsZVO29d4/rPqSJ2KFguDD3mjDL406doTTLNuDI4ndxfJl6fmQ==
+  dependencies:
+    "@envelop/types" "2.2.0"
+
 "@envelop/disable-introspection@^3.0.0":
   version "3.3.1"
   resolved "https://registry.npmjs.org/@envelop/disable-introspection/-/disable-introspection-3.3.1.tgz"
   integrity sha512-THR8UnRQQB5nCLmITXvebwXwSHvFjS+ThA3RRVXpFX9EupMbTFN5a4NHty7+BYD798c3VrBZ/InbMlEWqw1c9g==
+
+"@envelop/extended-validation@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@envelop/extended-validation/-/extended-validation-1.6.1.tgz#0d1ffc78d1eaa4b8bc6ca6ee74c1d6901aa9cc73"
+  integrity sha512-rf2sIEcel/dlQx4sSHaKOin5BxpNrJka4s92T2LzcoD/H+I4bNfJ8tyNHmB52iZ8vxOELmLhSRHW/ag+n59zAg==
+  dependencies:
+    "@graphql-tools/utils" "^8.6.1"
+
+"@envelop/generic-auth@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-4.2.1.tgz#436c97d5cf4cf50687ebf16ee1b9d72a22987edd"
+  integrity sha512-A/IqpjIFxOaLymY80z6lHqIXJXGUhI6sETt5UrU0sdOXIrXIm2ZVDECZhjiT7kYeZ6dQ4syvIIj1goIXLYljCQ==
+  dependencies:
+    "@envelop/extended-validation" "^1.6.1"
 
 "@envelop/parser-cache@^4.0.0":
   version "4.3.1"
@@ -868,7 +889,7 @@
     value-or-promise "^1.0.11"
     ws "^8.3.0"
 
-"@graphql-tools/utils@8.6.9", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.5.2", "@graphql-tools/utils@^8.6.0", "@graphql-tools/utils@^8.6.5":
+"@graphql-tools/utils@8.6.9", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.5.2", "@graphql-tools/utils@^8.6.0", "@graphql-tools/utils@^8.6.1", "@graphql-tools/utils@^8.6.5":
   version "8.6.9"
   resolved "https://registry.npmjs.org/@graphql-tools/utils/-/utils-8.6.9.tgz"
   integrity sha512-Z1X4d4GCT81+8CSt6SgU4t1w1UAUsAIRb67mI90k/zAs+ArkB95iE3bWXuJCUmd1+r8DGGtmUNOArtd6wkt+OQ==
