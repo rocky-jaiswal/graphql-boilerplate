@@ -1,18 +1,18 @@
+import { readFileSync } from 'fs'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 
-const typeDefinitions = /* GraphQL */ `
-  type Query {
-    hello: String!
-  }
-`
+import { Resolvers } from './generated/graphql'
+import { posts } from './resolvers/posts'
 
-const resolvers = {
+const typeDefs = readFileSync('./src/graphql/sample.graphql', 'utf8')
+
+const resolvers: Resolvers = {
   Query: {
-    hello: () => 'Hello World!'
+    posts
   }
 }
 
 export const schema = makeExecutableSchema({
   resolvers: [resolvers],
-  typeDefs: [typeDefinitions]
+  typeDefs: [typeDefs]
 })

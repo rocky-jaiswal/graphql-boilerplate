@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev --exit-child --respawn src/main.ts",
-    "start": "ts-node src/main.ts"
+    "start": "ts-node src/main.ts",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
     "@types/node": "^17.0.30",
@@ -20,9 +21,16 @@
     "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
     "ts-node-dev": "^1.1.8",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "@graphql-codegen/typescript-react-apollo": "3.2.11",
+    "@graphql-codegen/typescript-resolvers": "2.6.1",
+    "@graphql-codegen/typescript": "2.4.8",
+    "@graphql-codegen/typescript-operations": "2.3.5",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/cli": "2.6.2"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
     "@graphql-tools/schema": "^8.3.10",
     "@graphql-yoga/node": "^2.3.0",
     "graphql": "^16.4.0"
