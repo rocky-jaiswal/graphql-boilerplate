@@ -2,13 +2,13 @@ import { readFileSync } from 'fs'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 
 import { Resolvers } from './generated/graphql'
-import { posts } from './resolvers/posts'
+import { user } from './resolvers/users'
 
 const typeDefs = readFileSync('./src/graphql/sample.graphql', 'utf8')
 
 const resolvers: Resolvers = {
   Query: {
-    posts
+    user
   }
 }
 
