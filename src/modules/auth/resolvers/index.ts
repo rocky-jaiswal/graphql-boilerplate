@@ -1,4 +1,4 @@
-import { GraphQLContext } from '../../../main'
+import { GraphQLContext } from '../../../types'
 import { User } from '../../../generated/graphql'
 import { AuthModule } from '../generated-types/module-types'
 

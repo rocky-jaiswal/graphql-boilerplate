@@ -3,9 +3,7 @@ import {
   // ValidateUserFn
 } from '@envelop/generic-auth'
 
-export type UserType = {
-  id: string
-}
+import { UserType } from '../types'
 
 // TODO: Extract and validation authorisation header, context type
 const resolveUserFn: ResolveUserFn<UserType> = async (_context) => {

@@ -1,19 +1,11 @@
-import pino, { Logger } from 'pino'
-import type { IncomingMessage, ServerResponse } from 'http'
+import pino from 'pino'
 
 import { createServer } from '@graphql-yoga/node'
 import { useGenericAuth } from '@envelop/generic-auth'
 import { useDepthLimit } from '@envelop/depth-limit'
 
 import { schema } from './schema'
-import resolveUserFn, { UserType } from './plugins/authResolverUserFn'
-
-export type GraphQLContext = {
-  request: IncomingMessage
-  res: ServerResponse
-  logger: Logger
-  currentUser: UserType
-}
+import resolveUserFn from './plugins/authResolverUserFn'
 
 const logger = pino()
 

@@ -1,4 +1,4 @@
-import { GraphQLContext } from '../../../main'
+import { GraphQLContext } from '../../../types'
 import { Post, QueryPostByIdArgs } from '../../../generated/graphql'
 import { PostsModule } from '../generated-types/module-types'
 
