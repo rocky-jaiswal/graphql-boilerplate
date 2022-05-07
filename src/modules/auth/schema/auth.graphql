@@ -1,5 +1,3 @@
-# sample.graphql
-
 type Query {
   user: User
 }

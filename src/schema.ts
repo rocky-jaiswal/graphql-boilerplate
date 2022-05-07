@@ -1,18 +1,10 @@
-import { readFileSync } from 'fs'
-import { makeExecutableSchema } from '@graphql-tools/schema'
+import { createApplication } from 'graphql-modules'
 
-import { Resolvers } from './generated/graphql'
-import { user } from './resolvers/users'
+import { authModule } from './modules/auth/authModule'
+import { postModule } from './modules/posts/postModule'
 
-const typeDefs = readFileSync('./src/graphql/sample.graphql', 'utf8')
-
-const resolvers: Resolvers = {
-  Query: {
-    user
-  }
-}
-
-export const schema = makeExecutableSchema({
-  resolvers: [resolvers],
-  typeDefs: [typeDefs]
+const application = createApplication({
+  modules: [authModule, postModule]
 })
+
+export const schema = application.createSchemaForApollo()

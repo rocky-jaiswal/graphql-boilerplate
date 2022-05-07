@@ -1,9 +1,12 @@
 overwrite: true
 # schema: "http://localhost:4000/graphql"
-# documents: "./src/graphql/*.graphql"
+schema: ./src/modules/**/schema/*.graphql
 generates:
-  src/generated/graphql.ts:
-    schema: ./src/graphql/sample.graphql
+  ./src/modules/:
+    preset: graphql-modules
+    presetConfig:
+      baseTypesPath: ../generated/graphql.ts
+      filename: ./generated-types/module-types.ts
     plugins:
       - "typescript"
       - "typescript-operations"

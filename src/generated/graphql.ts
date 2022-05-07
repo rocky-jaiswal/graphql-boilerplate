@@ -13,9 +13,21 @@ export type Scalars = {
   Float: number
 }
 
+export type Post = {
+  __typename?: 'Post'
+  id?: Maybe<Scalars['ID']>
+  title?: Maybe<Scalars['String']>
+}
+
 export type Query = {
   __typename?: 'Query'
+  postById?: Maybe<Post>
+  posts?: Maybe<Array<Post>>
   user?: Maybe<User>
+}
+
+export type QueryPostByIdArgs = {
+  id?: InputMaybe<Scalars['ID']>
 }
 
 export type User = {
@@ -110,6 +122,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   ID: ResolverTypeWrapper<Scalars['ID']>
+  Post: ResolverTypeWrapper<Post>
   Query: ResolverTypeWrapper<{}>
   String: ResolverTypeWrapper<Scalars['String']>
   User: ResolverTypeWrapper<User>
@@ -119,15 +132,32 @@ export type ResolversTypes = {
 export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']
   ID: Scalars['ID']
+  Post: Post
   Query: {}
   String: Scalars['String']
   User: User
+}
+
+export type PostResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Post'] = ResolversParentTypes['Post']
+> = {
+  id?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>
+  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = {
+  postById?: Resolver<
+    Maybe<ResolversTypes['Post']>,
+    ParentType,
+    ContextType,
+    Partial<QueryPostByIdArgs>
+  >
+  posts?: Resolver<Maybe<Array<ResolversTypes['Post']>>, ParentType, ContextType>
   user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
 }
 
@@ -141,6 +171,7 @@ export type UserResolvers<
 }
 
 export type Resolvers<ContextType = any> = {
+  Post?: PostResolvers<ContextType>
   Query?: QueryResolvers<ContextType>
   User?: UserResolvers<ContextType>
 }
