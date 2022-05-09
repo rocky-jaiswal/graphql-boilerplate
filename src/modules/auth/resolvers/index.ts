@@ -1,5 +1,5 @@
 import { GraphQLContext } from '../../../types'
-import { User } from '../../../generated/graphql'
+import { User } from '../../../generated/graphql-server'
 import { AuthModule } from '../generated-types/module-types'
 
 const resolvers: AuthModule.Resolvers = {

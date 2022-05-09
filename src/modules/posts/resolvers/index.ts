@@ -1,5 +1,5 @@
 import { GraphQLContext } from '../../../types'
-import { Post, QueryPostByIdArgs } from '../../../generated/graphql'
+import { Post, QueryPostByIdArgs } from '../../../generated/graphql-server'
 import { PostsModule } from '../generated-types/module-types'
 
 const resolvers: PostsModule.Resolvers = {
