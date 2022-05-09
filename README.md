@@ -4,7 +4,7 @@
 
 - TypeScript
 - Yoga
-- CodeGen
+- CodeGen (Server + Client)
 - GraphQL Modules
 - Yoga Playground
 - Envelop
